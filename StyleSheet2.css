@@ -1,0 +1,658 @@
+﻿
+
+/*------------------------------------------------------------------------------------------*/
+
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}
+
+html {
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', 'Arial', Sans-Serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizelegibility;
+}
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 80px 0;
+}
+
+.box {
+    padding: 2%;
+}
+
+header{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/librarybg.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    background-repeat:no-repeat;
+}
+
+.librarybox {
+    position: absolute;
+    top: 41%;
+    left: 31%;
+    width: 622px;
+}
+
+
+h1,
+h2 {
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 300;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 180%;
+    word-spacing: 0px;
+    text-align: center;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    color: White;
+    margin-top: 5%;
+}
+h4{
+    font-size: 180%;
+    color: purple;
+}
+
+    h2:after {
+        display: block;
+        height: 2px;
+        background-color: #e67e22;
+        content: " ";
+        width: 100px;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+h3 {
+    font-size: 110%;
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.librarybox h3 {
+    color: #fff;
+    font-weight: 300;
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+.librarybox h1 {
+    margin-left: 100px;
+}
+
+/*-------------------paragraph---------*/
+.long-about {
+    line-height: 145%;
+    width: 90%;
+    margin-left: 5%;
+    text-align: justify;
+}
+
+.box p {
+    font-size: 90%;
+    line-height: 145%;
+}
+
+
+
+/*-------------Showcase Gallery-----------*/
+
+.section-galary {
+    padding: 0;
+}
+
+.showcase {
+    list-style: none;
+    width: 100%;
+}
+
+    .showcase li {
+        display: block;
+        float: left;
+        width: 25%;
+    }
+
+.library-photo {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+    .library-photo img {
+        opacity: 0.7;
+        width: 100%;
+        height: auto;
+        transform: scale(1.15);
+        transition: transform 0.5s, opacity 0.5s;
+    }
+
+        .library-photo img:hover {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+/*-------------Location-----------*/
+.section-location {
+    margin-top: 38%;
+    margin-bottom: 0px;
+}
+
+.box img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/*-----------Reviews--------*/
+.section-reviews {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(http://localhost:45869/Library/images/bg1.jpg);
+    background-size: cover;
+    color: #fff;
+    background-attachment: fixed;
+}
+
+blockquote {
+    padding: 4%;
+    font-style: italic;
+    line-height: 145%;
+    position: relative;
+}
+
+cite {
+    font-size: 90%;
+    margin-top: 25px;
+    display: block;
+}
+
+blockquote:before {
+    content: "\201C";
+    font-size: 400%;
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+}
+
+cite img {
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.main-txtbx {
+    padding: 10px;
+    border: 1px solid #e67e22;
+    border-radius: 100px;
+    margin-left: 7px;
+}
+
+.aspbtn {
+    background-color: #e67e22;
+    color: #fff;
+    font-weight: 300;
+    font-family: Lato, Arial;
+    padding: 10px 39px;
+    border-bottom: 3px solid #e67e22;
+    border: 1px solid #e67e22;
+    border-radius: 200px;
+    transition: background-color 0.2s;
+    margin-left: 73%;
+    margin-top: 4%;
+}
+
+.aspbtnxs {
+    background-color: #e67e22;
+    color: #fff;
+    font-weight: 300;
+    font-family: Lato, Arial;
+    padding: 1px 1px;
+    border-bottom: 3px solid #e67e22;
+    border: 1px solid #e67e22;
+    border-radius: 50px;
+    transition: background-color 0.2s;
+    margin-left: 5%;
+}
+.aspbtnlogout {
+    background-color: #e67e22;
+    color: #fff;
+    font-weight: 300;
+    font-family: Lato, Arial;
+    padding: 10px 39px;
+    border-bottom: 3px solid #e67e22;
+    border: 1px solid #e67e22;
+    border-radius: 200px;
+    transition: background-color 0.2s;
+    margin-left: 0;
+    margin-top: 4%;
+}
+
+    .aspbtnlogout:hover,
+    .aspbtnlogout:active {
+        background-color: #cd6d17;
+        border: 1px solid #000;
+    }
+
+.aspbtnaddbook {
+    background-color: #e67e22;
+    color: #fff;
+    font-weight: 300;
+    font-family: Lato, Arial;
+    padding: 10px 39px;
+    border-bottom: 3px solid #e67e22;
+    border: 1px solid #e67e22;
+    border-radius: 200px;
+    transition: background-color 0.2s;
+    margin-left: 37%;
+    margin-top: 8%;
+}
+
+    .aspbtnaddbook:hover,
+    .aspbtnaddbook:active {
+        background-color: #cd6d17;
+        border: 1px solid #000;
+    }
+
+.aspbtnclrbook {
+    background-color: #e67e22;
+    color: #fff;
+    font-weight: 300;
+    font-family: Lato, Arial;
+    padding: 10px 39px;
+    border-bottom: 3px solid #e67e22;
+    border: 1px solid #e67e22;
+    border-radius: 200px;
+    transition: background-color 0.2s;
+    margin-left: 4%;
+    margin-top: 8%;
+}
+
+    .aspbtnclrbook:hover,
+    .aspbtnclrbook:active {
+        background-color: #cd6d17;
+        border: 1px solid #000;
+    }
+
+.aspbtnaddrdr {
+    background-color: #e67e22;
+    color: #fff;
+    font-weight: 300;
+    font-family: Lato, Arial;
+    padding: 10px 39px;
+    border-bottom: 3px solid #e67e22;
+    border: 1px solid #e67e22;
+    border-radius: 200px;
+    transition: background-color 0.2s;
+    margin-left: 36%;
+    margin-top: 4%;
+}
+
+    .aspbtnaddrdr:hover,
+    .aspbtnaddrdr:active {
+        background-color: #cd6d17;
+        border: 1px solid #000;
+    }
+
+
+
+.aspbtnclrrdr {
+    background-color: #e67e22;
+    color: #fff;
+    font-weight: 300;
+    font-family: Lato, Arial;
+    padding: 10px 39px;
+    border-bottom: 3px solid #e67e22;
+    border: 1px solid #e67e22;
+    border-radius: 200px;
+    transition: background-color 0.2s;
+    margin-left: 2%;
+    margin-top: 4%;
+}
+
+    .aspbtnclrrdr:hover,
+    .aspbtnclrrdr:active {
+        background-color: #cd6d17;
+        border: 1px solid #000;
+    }
+
+
+
+.aspbtn:hover,
+.aspbtn:active {
+    background-color: #cd6d17;
+    border: 1px solid #000;
+}
+
+.aspbtn-ghost {
+    background-color: transparent;
+    color: #e67e22;
+    font-weight: 300;
+    font-family: Lato, Arial;
+    padding: 10px 30px;
+    border-bottom: 3px solid #e67e22;
+    border: 1px solid #e67e22;
+    border-radius: 200px;
+    transition: background-color 0.2s;
+}
+
+    .aspbtn-ghost:hover,
+    .aspbtn-ghost:active {
+        background-color: #cd6d17;
+        border: 1px solid #000;
+        color: #fff;
+    }
+
+.aspbtnsrcbook {
+    background-color: #e67e22;
+    color: #fff;
+    font-weight: 300;
+    font-family: Lato, Arial;
+    padding: 10px 39px;
+    border-bottom: 3px solid #e67e22;
+    border: 1px solid #e67e22;
+    border-radius: 200px;
+    transition: background-color 0.2s;
+    margin-left: 2%;
+    margin-top: 1%;
+}
+
+    .aspbtnsrcbook:hover,
+    .aspbtnsrcbook:active {
+        background-color: #cd6d17;
+        border: 1px solid #000;
+    }
+
+
+
+.aspbtnsrcauthor {
+    background-color: #e67e22;
+    color: #fff;
+    font-weight: 300;
+    font-family: Lato, Arial;
+    padding: 10px 39px;
+    border-bottom: 3px solid #e67e22;
+    border: 1px solid #e67e22;
+    border-radius: 200px;
+    transition: background-color 0.2s;
+    margin-left: 2%;
+    margin-top: 1%;
+}
+
+    .aspbtnsrcauthor:hover,
+    .aspbtnsrcauthor:active {
+        background-color: #cd6d17;
+        border: 1px solid #000;
+    }
+    
+.aspbtnrtnbook
+{
+    background-color: #e67e22;
+    color: #fff;
+    font-weight: 300;
+    font-family: Lato, Arial;
+    padding: 10px 39px;
+    border-bottom: 3px solid #e67e22;
+    border: 1px solid #e67e22;
+    border-radius: 200px;
+    transition: background-color 0.2s;
+    margin-left: 40%;
+    margin-top: 1%;
+}
+
+.aspbtnrtnbook:hover,
+.aspbtnrtnbook:active
+{
+    background-color: #cd6d17;
+        border: 1px solid #000;
+}
+
+
+
+.aspbtnprtbook {
+    background-color: #e67e22;
+    color: #fff;
+    font-weight: 300;
+    font-family: Lato, Arial;
+    padding: 10px 39px;
+    border-bottom: 3px solid #e67e22;
+    border: 1px solid #e67e22;
+    border-radius: 200px;
+    transition: background-color 0.2s;
+    margin-left: 42%;
+    margin-top: 3%;
+}
+
+    .aspbtnprtbook:hover,
+    .aspbtnprtbook:active {
+        background-color: #cd6d17;
+        border: 1px solid #000;
+    }
+
+/*-----
+.btn:link,
+.btn:visited
+{
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+   
+    margin-left: 33%; 
+    color: #fff;
+    border-radius: 200px;
+    border: 1px solid #e67e33;
+    transition: background-color 0.2s;
+}
+
+.btn:hover,
+.btn:active 
+{
+     background-color:#e67e33;
+     
+
+}
+
+.btn-full:link,
+.btn-full:visited 
+{
+  background-color: #e67e22;
+   border: 1px solid #e67e22;
+   color: #fff;
+   transition: background-color 0.2s, border 0.2s;
+}
+
+.btn-full:hover,
+.btn-full:active 
+{
+    background-color: #cf6d17;
+    border: 1px solid #000;
+}
+ ----*/
+
+.logo {
+    height: 100px;
+    width: auto;
+    float: left;
+    margin-top: 20px;
+}
+
+.logo-sticky {
+    display: none;
+    height: 50px;
+    width: auto;
+    float: left;
+    margin: 5px 0;
+}
+/*----------Main Navigation---------*/
+.main-nav {
+    float: none;
+    list-style: none;
+}
+
+.nav {
+    float: right;
+    list-style: none;
+}
+
+    .nav li {
+        color: #fff;
+        display: inline-block;
+        margin-left: 40px;
+        margin-top: 50px;
+    }
+
+.main-nav li {
+    color: #fff;
+    display: inline-block;
+    margin-left: 40px;
+    margin-top: 50px;
+}
+
+    .main-nav li a:link,
+    .main-nav li a:visited {
+        padding: 8px 0;
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 90%;
+        border-bottom: 2px solid transparent;
+        transition: border-bottom 0.2s;
+    }
+
+    .main-nav li a:hover,
+    .main-nav li a:active {
+        border-bottom: 2px solid #e67e22;
+    }
+
+/*----------Sticky Navigation---------*/
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.99);
+    box-shadow: 0 2px 2px #efefef;
+    z-index: 9999;
+}
+
+    .sticky .main-nav li a:link,
+    .sticky .main-nav li a:visited {
+        padding: 15px 0;
+        color: #555;
+    }
+
+    .sticky .logo-sticky {
+        display: block;
+    }
+
+    .sticky .logo {
+        display: none;
+    }
+
+    .sticky .main-nav {
+        margin-top: -30px;
+    }
+
+
+
+/*---------------contact form----------------*/
+
+
+
+/*--------------footer--------------*/
+footer {
+    background-color: #333;
+    padding: 40px;
+}
+
+.footer-nav {
+    list-style: none;
+    float: left;
+}
+
+    .footer-nav li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+        .footer-nav li a:link,
+        .footer-nav li a:visited {
+            text-decoration: none;
+            border: 0;
+            color: #888;
+            transition: color 0.2s;
+        }
+
+        .footer-nav li a:hover,
+        .footer-nav li a:active {
+            color: #ddd;
+        }
+
+footer p {
+    color: #888;
+    text-align: center;
+    font-size: 90%;
+    margin-top: 10px;
+}
+/*-----------------------Table style----------------------------*/
+.addbooktable {
+    margin-top: 3%;
+    margin-left: 14%;
+    color: White;
+}
+
+.addReadertable {
+    margin-top: 3%;
+    margin-left: 33%;
+    color: White;
+}
+
+.srcbooktable{
+    margin-top:3%;
+    color: white;
+    margin-left: 300px;
+    margin-bottom: 30px;
+}
+
+.returnbooktable
+{
+margin-top: 1%;
+color: white;
+margin-left: 70px;
+}
+
+
+
+.gdv{
+    width: 100px;
+    height:auto;
+    font-size:larger;
+    justify-content: center;
+
+}

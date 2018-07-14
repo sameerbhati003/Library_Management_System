@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SRS_libraryModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="SRS_libraryModelStoreContainer">
+          <EntitySet Name="Add_Book" EntityType="SRS_libraryModel.Store.Add_Book" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Add_Reader" EntityType="SRS_libraryModel.Store.Add_Reader" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblroles" EntityType="SRS_libraryModel.Store.tblroles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbluser" EntityType="SRS_libraryModel.Store.tbluser" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_tbluser_tblroles" Association="SRS_libraryModel.Store.FK_tbluser_tblroles">
+            <End Role="tblroles" EntitySet="tblroles" />
+            <End Role="tbluser" EntitySet="tbluser" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Add_Book">
+          <Key>
+            <PropertyRef Name="Book_id" />
+          </Key>
+          <Property Name="Book_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Book_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Book_Author_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Book_ISBN" Type="varchar" MaxLength="50" />
+          <Property Name="Book_Publisher_name" Type="varchar" MaxLength="50" />
+          <Property Name="Book_Publication_date" Type="datetime" />
+          <Property Name="Book_Price" Type="int" />
+          <Property Name="Book_Quantity" Type="int" />
+          <Property Name="Book_Branch" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Add_Reader">
+          <Key>
+            <PropertyRef Name="Reader_id" />
+          </Key>
+          <Property Name="Reader_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Reader_Studentid" Type="varchar" MaxLength="50" />
+          <Property Name="Reader_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Reader_Address" Type="varchar" MaxLength="50" />
+          <Property Name="Reader_Phone" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblroles">
+          <Key>
+            <PropertyRef Name="roleId" />
+          </Key>
+          <Property Name="roleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="rolename" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbluser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="password" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="roleid" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_tbluser_tblroles">
+          <End Role="tblroles" Type="SRS_libraryModel.Store.tblroles" Multiplicity="1" />
+          <End Role="tbluser" Type="SRS_libraryModel.Store.tbluser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblroles">
+              <PropertyRef Name="roleId" />
+            </Principal>
+            <Dependent Role="tbluser">
+              <PropertyRef Name="roleid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="selectdata" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="selectdatasrcbook" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pBook_Name" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="selectdatasrcbookar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pBook_Author_Name" Type="varchar" Mode="In" />
+        </Function>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SRS_libraryModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SRS_libraryEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Add_Book" EntityType="SRS_libraryModel.Add_Book" />
+          <EntitySet Name="Add_Reader" EntityType="SRS_libraryModel.Add_Reader" />
+          <EntitySet Name="tblroles" EntityType="SRS_libraryModel.tblrole" />
+          <EntitySet Name="tblusers" EntityType="SRS_libraryModel.tbluser" />
+          <AssociationSet Name="FK_tbluser_tblroles" Association="SRS_libraryModel.FK_tbluser_tblroles">
+            <End Role="tblroles" EntitySet="tblroles" />
+            <End Role="tbluser" EntitySet="tblusers" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Add_Book">
+          <Key>
+            <PropertyRef Name="Book_id" />
+          </Key>
+          <Property Name="Book_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Book_Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Book_Author_Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Book_ISBN" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Book_Publisher_name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Book_Publication_date" Type="DateTime" />
+          <Property Name="Book_Price" Type="Int32" />
+          <Property Name="Book_Quantity" Type="Int32" />
+          <Property Name="Book_Branch" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Add_Reader">
+          <Key>
+            <PropertyRef Name="Reader_id" />
+          </Key>
+          <Property Name="Reader_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Reader_Studentid" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Reader_Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Reader_Address" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Reader_Phone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tblrole">
+          <Key>
+            <PropertyRef Name="roleId" />
+          </Key>
+          <Property Name="roleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rolename" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="tblusers" Relationship="SRS_libraryModel.FK_tbluser_tblroles" FromRole="tblroles" ToRole="tbluser" />
+        </EntityType>
+        <EntityType Name="tbluser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="roleid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblrole" Relationship="SRS_libraryModel.FK_tbluser_tblroles" FromRole="tbluser" ToRole="tblroles" />
+        </EntityType>
+        <Association Name="FK_tbluser_tblroles">
+          <End Role="tblroles" Type="SRS_libraryModel.tblrole" Multiplicity="1" />
+          <End Role="tbluser" Type="SRS_libraryModel.tbluser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblroles">
+              <PropertyRef Name="roleId" />
+            </Principal>
+            <Dependent Role="tbluser">
+              <PropertyRef Name="roleid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SRS_libraryModelStoreContainer" CdmEntityContainer="SRS_libraryEntities">
+          <EntitySetMapping Name="Add_Book">
+            <EntityTypeMapping TypeName="SRS_libraryModel.Add_Book">
+              <MappingFragment StoreEntitySet="Add_Book">
+                <ScalarProperty Name="Book_id" ColumnName="Book_id" />
+                <ScalarProperty Name="Book_Name" ColumnName="Book_Name" />
+                <ScalarProperty Name="Book_Author_Name" ColumnName="Book_Author_Name" />
+                <ScalarProperty Name="Book_ISBN" ColumnName="Book_ISBN" />
+                <ScalarProperty Name="Book_Publisher_name" ColumnName="Book_Publisher_name" />
+                <ScalarProperty Name="Book_Publication_date" ColumnName="Book_Publication_date" />
+                <ScalarProperty Name="Book_Price" ColumnName="Book_Price" />
+                <ScalarProperty Name="Book_Quantity" ColumnName="Book_Quantity" />
+                <ScalarProperty Name="Book_Branch" ColumnName="Book_Branch" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Add_Reader">
+            <EntityTypeMapping TypeName="SRS_libraryModel.Add_Reader">
+              <MappingFragment StoreEntitySet="Add_Reader">
+                <ScalarProperty Name="Reader_id" ColumnName="Reader_id" />
+                <ScalarProperty Name="Reader_Studentid" ColumnName="Reader_Studentid" />
+                <ScalarProperty Name="Reader_Name" ColumnName="Reader_Name" />
+                <ScalarProperty Name="Reader_Address" ColumnName="Reader_Address" />
+                <ScalarProperty Name="Reader_Phone" ColumnName="Reader_Phone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblroles">
+            <EntityTypeMapping TypeName="SRS_libraryModel.tblrole">
+              <MappingFragment StoreEntitySet="tblroles">
+                <ScalarProperty Name="roleId" ColumnName="roleId" />
+                <ScalarProperty Name="rolename" ColumnName="rolename" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblusers">
+            <EntityTypeMapping TypeName="SRS_libraryModel.tbluser">
+              <MappingFragment StoreEntitySet="tbluser">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="roleid" ColumnName="roleid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="DataModel">
+        <EntityTypeShape EntityType="SRS_libraryModel.Add_Book" Width="1.5" PointX="0.75" PointY="3.75" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SRS_libraryModel.Add_Reader" Width="1.5" PointX="2.75" PointY="3.75" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="SRS_libraryModel.tblrole" Width="1.5" PointX="0.75" PointY="1.125" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SRS_libraryModel.tbluser" Width="1.5" PointX="3" PointY="0.875" Height="1.9802864583333335" IsExpanded="true" />
+        <AssociationConnector Association="SRS_libraryModel.FK_tbluser_tblroles" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="1.9228417968749998" />
+          <ConnectorPoint PointX="3" PointY="1.9228417968749998" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
